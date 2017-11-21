@@ -1,3 +1,27 @@
+<?php 
+	$arrAnimals=array('hond', 'kat','schaap','koe','geit');
+	$zoogdieren= array('aardmuis','baardrob','geit');
+	$arrRndNbmrs= array(8,7,8,7,3,2,1,2,4);
+
+	$getallenNonDup	=	array_unique( $arrRndNbmrs );
+	rsort( $getallenNonDup ); 
+
+	$arrAnimalsCount= count($arrAnimals);
+	$teZoekenDier=in_array('hond',$arrAnimals);
+	sort($arrAnimals);
+
+	$mergedDieren	=	array_merge( $arrAnimals, $zoogdieren );
+	
+
+	
+		
+	
+?>
+
+
+
+
+
 <!doctype html>
 <html>
     <head>
@@ -20,6 +44,16 @@
                 <li>Laat het script berekenen hoeveel elementen er in de array zitten en druk af naar het scherm</li>
 
                 <li>Maak het mogelijk om met een variabele <code>$teZoekenDier</code> een dier te zoeken in de array, druk tevens een gepaste boodschap af (gevonden/niet gevonden).</li>
+                <br>
+                <li><?php echo $arrAnimalsCount." elementen.<br>";
+				if($teZoekenDier){
+					echo "Dier gevonden";
+				}	
+				else{
+					echo "Dier niet gevonden";
+				}
+				?></li>
+           
 
             </ul> 
 
@@ -31,6 +65,8 @@
                 <li>Zorg ervoor dat de array volgens het alfabet gesorteerd wordt ( A -> Z )</li>
 
                 <li>Maak een array <code>$zoogdieren</code> en plaats hier 3 dieren in, voeg vervolgens de 2 arrays met dieren samen in de array <code>$dierenLijst</code></li>
+                <br>
+                <li><?php var_dump( $mergedDieren ); ?></li>
             </ul>
 
 
@@ -44,6 +80,8 @@
                 <li>Haal de duplicaten uit de array</li>
 
                 <li>Sorteer de array van groot naar klein</li>
+                <br>
+                <li><?php var_dump($getallenNonDup) ?></li>
 
             </ul>
 
