@@ -19,13 +19,13 @@ En denk er aan, blijven volharden! Het groene vinkje is in zicht.
 Neem deze tekst over in je eigen document en schrijf onder deze tekst wat hierboven werd gevraagd.
 
 
-##Waarom ik voor MT heb gekozen.
+##**Waarom ik voor MT heb gekozen.**
 
 >Ik heb in mijn eerste jaar hogeronderwijs International business gedaan. Het beviel en interesseerde mij en dat doet het nogsteeds. Maar ik had iets creatiever, meer hands-on nodig. Na lang zoeken vond ik deze opleiding en wat me zo aansprak was het de creatieve aanpak en de mogelijkheid om zelf dingen te creëren.
 
 >Via programmeren gaat er een hele wereld open van virtuele creaties en dat is wat ik precies nodig heb. Het fijne aan deze studie en de reden dat ik niet een studie zoals IT volg, is dat ze alle aspecten van het creatieve process en het process daarbuiten goed aanleren. Dit zorgt voor een "complete package" als we eenmaal de industrie ingaan.
 
-##Feedback voor de cursus Web-backend
+##**Feedback voor de cursus Web-backend**
 
 > Positief punt:
 >* Ik vind dat de opdrachten een goed en realistische beeld geven over hoe we php applicaties gebruiken in het dagelijkse leven.   
