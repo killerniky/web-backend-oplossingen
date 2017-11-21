@@ -28,7 +28,7 @@
 			}
 		}
 	}
-	else
+	else 
 	{
 		$message			=	'U bent ingelogd.';
 		$isAuthenticated	=	true;
