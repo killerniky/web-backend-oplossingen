@@ -52,11 +52,8 @@
 					<label for="password">Paswoord: </label>
 					<input type="password" name="password">
 				</li>
-				<li>
-					<input type="checkbox" name="checked">
-					<label for="checked">Check mij</label>
-					
-				</li>
+				
+				
 			</ul>
 			<input type="submit" name="submit" value="inloggen">
 		</form>
