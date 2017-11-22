@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<title>Opdracht-post</title>
 </head>
