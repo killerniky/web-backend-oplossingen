@@ -7,7 +7,7 @@
 	else
 	{			
 		echo $jaartal." is geen schrikkeljaar";		
-	}
+	} 
 
 	$min         =   60; 
     $uur         =   60 * $min; 
