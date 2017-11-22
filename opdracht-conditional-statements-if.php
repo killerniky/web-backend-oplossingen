@@ -7,7 +7,7 @@
     { 
         $dag = 'maandag'; 
     } 
-      
+       
     if ( $getal == 2 ) 
     { 
         $dag = 'dinsdag'; 
