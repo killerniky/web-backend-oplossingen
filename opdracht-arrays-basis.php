@@ -25,7 +25,7 @@ $multipliedNumbers=$numbers[0]*$numbers[1]*$numbers[2]*$numbers[3]*$numbers[4];
 $arrLen=count($numbers);
 
 for($k=0;$k<(count($numbers2));$k++){
-	$emptyArray[$k]=$numbers[$k]+$numbers2[$k];	
+	$emptyArray[$k]=$numbers[$k]+$numbers2[$k];	 
 }
 
 
