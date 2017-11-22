@@ -1,0 +1,4 @@
+[13:25:47 11/22/17] - 127.0.0.1 - type:[error] Kortingscode is niet correct
+[13:25:50 11/22/17] - 127.0.0.1 - type:[error] Kortingscode is niet correct
+[13:25:51 11/22/17] - 127.0.0.1 - type:[error] Kortingscode is niet correct
+[13:26:34 11/22/17] - 127.0.0.1 - type:[error] Kortingscode is niet correct[13:30:02 11/22/17] - 127.0.0.1 - type:[error] De kortingscode heeft niet de juiste lengte[13:30:07 11/22/17] - 127.0.0.1 - type:[error] De kortingscode heeft niet de juiste lengte[13:30:08 11/22/17] - 127.0.0.1 - type:[error] De kortingscode heeft niet de juiste lengte[13:30:48 11/22/17] - 127.0.0.1 - type:[error] De kortingscode heeft niet de juiste lengte[13:33:41 11/22/17] - 127.0.0.1 - type:[error] De kortingscode heeft niet de juiste lengte
