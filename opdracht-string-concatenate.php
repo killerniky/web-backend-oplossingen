@@ -3,7 +3,7 @@
 	$achternaam="Dieben";
 	$volledigenaam= $voornaam. " " . $achternaam;
 	echo $volledigenaam;
-	
+	 
 ?>
 <!doctype html>
 <html>
