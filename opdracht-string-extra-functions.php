@@ -11,7 +11,7 @@
 	$cijfertje=3;
 	$langsteWoord="zandzeepsodemineralenwatersteenstralen";
 	$changedWord=str_replace($lettertje,$cijfertje,$langsteWoord);
-?>
+?> 
 
 
 <!doctype html>
