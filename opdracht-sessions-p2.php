@@ -26,7 +26,7 @@
 			setcookie('gemeente', $gemeente, time()+60*60*7);
 			setcookie('postcode', $postcode, time()+60*60*7);
 		}
-	}*/
+	}*/ 
 	
 	
 ?>

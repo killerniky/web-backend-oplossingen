@@ -18,7 +18,7 @@ if(isset($_POST['volgende'])){
 		$message="Vul alles in aub!";
 	}
 }
-
+ 
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
