@@ -21,7 +21,7 @@
 
 <body class="web-backend-opdracht">
 
-	<section class="body">
+	<section class="body"> 
 
 		<style>
 			.oneven {
