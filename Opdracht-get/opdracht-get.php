@@ -12,7 +12,7 @@
 								'afbeeldingBeschrijving' => 'Donald Trump in de Rose Garden',),
 						  array ('titel'=>'De vervuiler betaalt? Kerncentrales dicht? U beslist mee vanaf vandaag',
 								 'datum' => '17 Oct 2017',
-								'inhoud'=>'De federale en regionale ministers van Energie in België beslisten in april om een interfederaal energiepact op te stellen voor 2030 en 2050, in nauw overleg met alle betrokkenen. Een van de grootste knopen die daarin doorgehakt zou moeten worden, is het lot van de kerncentrales in ons land. En ook hoe hernieuwbare energie aangepakt worden, wordt een behoorlijk zware dobber.',
+								'inhoud'=>'De federale en regionale ministers van Energie in België beslisten in april om een interfederaal energiepact op te stellen voor 2030 en 2050, in nauw overleg met alle betrokkenen. Een van de grootste knopen die daarin doorgehakt  zou moeten worden, is het lot van de kerncentrales in ons land. En ook hoe hernieuwbare energie aangepakt worden, wordt een behoorlijk zware dobber.',
 								'afbeelding' => 'artikel3.jpg',
 								'afbeeldingBeschrijving' => 'Man die zonnepannelen aan het installeren is',)
 						 );
@@ -43,11 +43,11 @@
 <head>
 	<meta charset="utf-8">
 	<?php if ( !$individueelArtikel ): ?>
-		<title>Oplossing get: deel1</title>
+		<title>Deel1</title>
 	<?php elseif ( $nietBestaandArtikel ): ?>
-		<title>Oplossing get: deel1 - Het artikel met id <?php echo $id ?> bestaat niet</title>
+		<title>Het artikel met id <?php echo $id ?> bestaat niet</title>
 	<?php else: ?>
-		<title>Oplossing get: deel1. Artikel: <?php echo $artikels[0]['titel'] ?></title>
+		<title>Deel1. Artikel: <?php echo $artikels[0]['titel'] ?></title>
 	<?php endif ?>
 		
 	<style>
@@ -97,13 +97,7 @@
 
 	</style>
 </head>
-<body>
-
-	<h1>Oplossing get: deel1</h1>
-
-	<pre>
-		<?php //echo var_dump($artikels) ?>
-	</pre>
+<body>	
 
 	<?php if ( !$nietBestaandArtikel ): ?>
 		<div class="container">
