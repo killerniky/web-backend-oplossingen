@@ -14,7 +14,7 @@
 	elseif(21<=$getal&&$getal<=30)
 	{
 		
-	}
+	} 
 	elseif(31<=$getal&&$getal<=40)
 	{
 		
