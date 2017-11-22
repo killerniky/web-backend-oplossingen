@@ -10,7 +10,7 @@
 <html>
 <head></head>
 <body>
-
+ 
 	<h1>Foutjes verbeteren</h1>
 	<p><?=  $_tekst1; ?></p>
 
