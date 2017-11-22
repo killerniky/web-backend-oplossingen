@@ -24,7 +24,7 @@
 			break;
 		default:
 			echo "no valid day was found";
-			break;
+			break; 
 	}
 ?>
 
