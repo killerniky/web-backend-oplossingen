@@ -1,6 +1,6 @@
 <?php $naam = "niky dieben"; ?>
 
-
+ 
 <!doctype html>
 
 
