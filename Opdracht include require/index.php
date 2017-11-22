@@ -15,7 +15,7 @@
 							'body' 	=> 'Body artikel 3',
 							'tags' 	=> 'Kernwoorden artikel 3',
 					)
-				);
+				); 
 
 	if ( isset( $_GET[ 'artikel' ] ) )
 	{
