@@ -11,7 +11,7 @@ Het motivatie-bestand moet de volgende dingen bevatten
     * Beschrijf kort één ding dat je sterk vindt aan de cursus web backend
     * En kort één punt dat zeker verbeterd moet worden.
 
-
+ 
 Nog een extra uitdaging: schrijf dit document in MarkDown. Jup, opnieuw iets bijleren. Maar geen nood, MarkDown is letterlijk simpeler dan HTML. Hoe je dat moet doen, moet je opnieuw zelf zien uit te vissen.
 
 En denk er aan, blijven volharden! Het groene vinkje is in zicht.
