@@ -72,7 +72,9 @@ catch ( PDOException $e )
 	<form action="<?= $_SERVER['PHP_SELF'] ?>" method="GET">
 		<select name="brouwernr">
 			<?php foreach ($brouwers as $key => $brouwer): ?>
-				<option value="<?= $brouwer['brouwernr'] ?>" <?= ( $brouwerNaam === $brouwer['brouwernr'] ) ? 'selected' : '' ?>><?= $brouwer['brnaam'] ?></option>
+				<option value="<?= $brouwer['brouwernr'] ?>" <?= ( $brouwerNaam === $brouwer['brouwernr'] ) ? 'selected' : '' ?>>
+				<!-- WAT DOET dit STUK HIERBOVEN -> ( $brouwerNaam === $brouwer['brouwernr'] ) ? 'selected' : '' ?> -->
+				<?= $brouwer['brnaam'] ?></option>
 			<?php endforeach ?>
 		</select>
 		<input type="submit" value="Geef mij alle bieren van deze brouwerij">		
