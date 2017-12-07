@@ -24,7 +24,7 @@
 		if ( $isAdded )
 		{
 			$insertId	=	$db->lastInsertId();			
-			$message	=	'Brouwerij succesvol toegevoegd. Het unieke nummer van deze brouwerij is ' . $insertId . ', waarbij  de primary key is van de toegevoegde datarij.';
+			$message	=	'Brouwerij succesvol toegevoegd. Het unieke nummer van deze brouwerij is ' . $insertId .'.';
 		}
 		else
 		{			
