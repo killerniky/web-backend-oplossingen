@@ -195,7 +195,7 @@
 	<?php endif ?>	
 
 	<?php if ( $brouwersEdit ): ?>
-		<h1>Brouwerij  ( #1 ) wijzigen</h1>
+		
 		<div>
 			<form action="<?= $_SERVER[ 'PHP_SELF' ] ?>" method="POST">
 				<ul>
