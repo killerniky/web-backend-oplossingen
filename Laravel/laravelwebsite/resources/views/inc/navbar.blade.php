@@ -23,9 +23,12 @@
             </ul>
 
             <ul class="nav navbar-nav">
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>      
-                <li><a href="/posts">Blog</a></li>   
+                @guest
+                    <li><a href="/">Home</a></li>
+                @else
+                    <li><a href="/">Home</a></li>    
+                    <li><a href="/posts/create">Add Article</a></li>   
+                @endguest
             </ul>
 
             <!-- Right Side Of Navbar -->

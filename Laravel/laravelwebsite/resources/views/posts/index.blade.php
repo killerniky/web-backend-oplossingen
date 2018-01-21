@@ -8,10 +8,15 @@
                 <div class="panel-content">
                     <ul class="article-overview">
                         @foreach($posts as $post)
-                        <li>
-                        <h3><a href="/posts/{{$post->id}}">{{$post->title}}</h3>
-                        <small>Written on {{$post->created_at}} by  {{$post->user->name}}</small>
-                        </li>
+                            <li>
+                                <h3><a href="{{$post->body}}">{{$post->title}}</h3>                                
+                                @if(!Auth::guest())
+                                    @if(Auth::user()->id == $post->user_id)      
+                                        <small><a href="/posts/{{$post->id}}/edit" class="btn btn-primary btn-xs edit-btn">Edit</a></small>                                         
+                                    @endif
+                                @endif
+                                <small>0 points | posted by {{$post->user->name}} | <a href="#">0 comments</a></small>
+                            </li>
                         @endforeach 
                     </ul>
                 </div>
