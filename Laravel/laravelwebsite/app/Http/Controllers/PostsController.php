@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Comment;
 
 class PostsController extends Controller
 {
@@ -18,7 +19,7 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {       
         $posts = Post::orderBy('created_at','desc')->get();       
         return view('posts.index')->with('posts', $posts);
     }

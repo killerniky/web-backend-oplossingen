@@ -9,13 +9,13 @@
                     <ul class="article-overview">
                         @foreach($posts as $post)
                             <li>                                
-                                <h3><a href="{{$post->body}}">{{$post->title}}</h3>                                
+                                <h3><a href="{{$post->body}}">{{$post->title}}</a></h3>                                
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $post->user_id)      
                                         <small><a href="/posts/{{$post->id}}/edit" class="btn btn-primary btn-xs edit-btn">Edit</a></small>                                         
                                     @endif
                                 @endif
-                                <small>0 points | posted by {{$post->user->name}} | <a href="/comments/{{$post->id}}">0 comments</a></small>
+                                <small>0 points | posted by {{$post->user->name}} | <a href="/posts/{{$post->id}}">{{$post->comments->count()}} comments</a></small>
                                 
                             </li>
                         @endforeach 

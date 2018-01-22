@@ -16,12 +16,14 @@ Route::get('/', 'PostsController@index');
 # Route::get('/services','PagesController@services');
 
 Route::resource('posts', 'PostsController');
-# Route::resource('comments', 'CommentsController');
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
-Route::post('/comments/{post_id}', 'CommentsController@store');
-Route::get('/comments/{post_id}', 'CommentsController@show');
 
 // Comments
-// Route::post('posts/{post_id}/edit', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+Route::get('comments/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => 'comments.edit']);
+Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
+Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
+Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);

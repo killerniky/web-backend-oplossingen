@@ -16,7 +16,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        return view('comments.index');
+       
     }
 
     /**
@@ -52,7 +52,7 @@ class CommentsController extends Controller
         $comment->save();
 
         Session::flash('success', 'Comment was added');
-        return redirect()->route('posts.index', [$post->slug]);
+        return redirect()->route('posts.show', [$post->id]);
     }
 
     /**
@@ -63,8 +63,7 @@ class CommentsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('comments.show')->with('post', $post);
+        
     }
 
     /**
@@ -75,7 +74,8 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comment = Comment::find($id);
+        return view('comments.edit')->withComment($comment);
     }
 
     /**
@@ -87,9 +87,22 @@ class CommentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comment = Comment::find($id);
+
+        $this->validate($request, array('comment' => 'required'));
+
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        Session::flash('success', 'Coment Updated');
+        return redirect()->route('posts.show', $comment->post->id);
     }
 
+    public function delete($id)
+    {
+        $comment = Comment::find($id);
+        return view('comments.delete')->withComment($comment);
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -98,6 +111,11 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment = Comment::find($id);
+        $post_id = $comment->post->id;
+        $comment->delete();
+
+        Session::flash('success', 'Comment deleted');
+        return redirect()->route('posts.show', $post_id);
     }
 }
