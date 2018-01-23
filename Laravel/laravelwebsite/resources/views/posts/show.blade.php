@@ -11,12 +11,8 @@
                 <ul>    
                     <li>{{$comment->comment}} </li>
                     <hr>
-                    <small>Posted by {{$post->user->name}} on {{$post->created_at}}  
-                        @if(!Auth::guest())
-                            @if(Auth::user()->id == $post->comment)      
-                                <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary">edit</a><a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger">delete</a>
-                            @endif
-                        @endif
+                    <small>Posted by {{$comment->name}} on {{$comment->created_at}}                                                           
+                                <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary">edit</a><a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger">delete</a>                            
                     </small>
                 </ul>
             @endforeach
@@ -27,11 +23,7 @@
     @else
       
         <div id="comment-form">
-            {{ Form::open(['route' => ['comments.store', $post->id], 'method'=>'POST'])}}              
-                <div class="form-group">
-                    {{Form::label('name', 'Name:')}}
-                    {{Form::text('name', null, ['class' => 'form-control'])}}
-                </div>
+            {{ Form::open(['route' => ['comments.store', $post->id], 'method'=>'POST'])}}                              
                 <div class="form-group">
                     {{Form::label('comment', 'Comment:')}}
                     {{Form::textarea('comment', null, ['class' => 'form-control'])}}
