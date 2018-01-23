@@ -11,8 +11,13 @@
                 <ul>    
                     <li>{{$comment->comment}} </li>
                     <hr>
-                    <small>Posted by {{$comment->name}} on {{$comment->created_at}}                                                           
-                                <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary">edit</a><a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger">delete</a>                            
+                    <small>Posted by {{$comment->name}} on {{$comment->created_at->diffForHumans()}}    
+                        @if(!Auth::guest()) 
+                            @if(Auth::user()->id == $comment->user_id)                                                       
+                                <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary">edit</a>
+                                <a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger">delete</a>                            
+                            @endif
+                        @endif
                     </small>
                 </ul>
             @endforeach
@@ -26,7 +31,7 @@
             {{ Form::open(['route' => ['comments.store', $post->id], 'method'=>'POST'])}}                              
                 <div class="form-group">
                     {{Form::label('comment', 'Comment:')}}
-                    {{Form::textarea('comment', null, ['class' => 'form-control'])}}
+                    {{Form::text('comment', null, ['class' => 'form-control'])}}
                 </div>  
                 <div class="form-group">
                     {{Form::submit('Add comment', ['class' => 'btn btn-success'])}}

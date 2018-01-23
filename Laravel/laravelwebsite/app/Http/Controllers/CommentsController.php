@@ -9,6 +9,10 @@ use Session;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +42,7 @@ class CommentsController extends Controller
     public function store(Request $request, $post_id)
     {
         $this->validate($request, array(            
-            'comment' => 'required|min:5|max:200',
+            'comment' => 'required|min:1|max:200',
         ));
 
         $post= Post::find($post_id);
