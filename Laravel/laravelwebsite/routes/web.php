@@ -31,4 +31,4 @@ Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' 
 // Votes
 # Route::post('posts/{id}/upvote', ['uses' => 'PostsController@upvote', 'as' => 'posts.upvote']);
 Route::post('posts/{id}/{user_id}/upvote', 'PostsController@upvote');
-Route::post('posts/{id}/downvote', 'PostsController@downvote');
+Route::post('posts/{id}/{user_id}/downvote', 'PostsController@downvote');

@@ -2,13 +2,26 @@
 
 @section('content')
     <a href="/posts" class="btn btn-default">Go back</a>
+    
     <h1><a href="{{$post->body}}">{{$post->title}}</a></h1>  
+    @if(!Auth::guest())
+        @if(Auth::user()->id !== $post->user_id)
+            {!!Form::open(['action' => ['PostsController@upvote', $post->id, Auth::user()->id ], 'method' => 'POST'])!!}
+                {{Form::submit(' + ', ["class" => "no-btn glyphicon glyphicon-chevron-up"])}}
+            {!!Form::close()!!}      
+            {!!Form::open(['action' => ['PostsController@downvote', $post->id, Auth::user()->id], 'method' => 'POST'])!!}
+                {{Form::submit(' - ', ["class" => "no-btn glyphicon glyphicon-chevron-down"])}} 
+            {!!Form::close()!!}                                 
+        @endif
+    @endif
+    <hr>
+    <small>{{$post->votes}} points | posted by {{$post->user->name}}</small>
     <hr>
     <div>    
         <p><strong>Comments:</strong></p>    
         
             @foreach($post->comments as $comment)            
-                <ul>    
+                <ul>                     
                     <li>{{$comment->comment}} </li>
                     <hr>
                     <small>Posted by {{$comment->name}} on {{$comment->created_at->diffForHumans()}}    
