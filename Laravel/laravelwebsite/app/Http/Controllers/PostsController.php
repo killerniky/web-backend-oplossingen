@@ -21,7 +21,7 @@ class PostsController extends Controller
      */
     public function index()
     {       
-        $posts = Post::orderBy('created_at','desc')->paginate(5);       
+        $posts = Post::orderBy('votes','desc')->paginate(5);       
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -53,7 +53,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
-        $post->votes = $request->input('votes');
+        $post->votes = 0;
         $post->save();
 
         return redirect('/')->with('success',  'Article created succesfully');
@@ -116,9 +116,11 @@ class PostsController extends Controller
                 DB::table('posts')->whereId($post_id)->increment('votes');
             }
 
+            
         }
 
-
+        
+        return back();
             
     }
 
