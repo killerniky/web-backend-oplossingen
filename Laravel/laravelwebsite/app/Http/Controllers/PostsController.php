@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Comment;
 
@@ -52,6 +53,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
+        $post->votes = $request->input('votes');
         $post->save();
 
         return redirect('/')->with('success',  'Article created succesfully');
@@ -87,6 +89,44 @@ class PostsController extends Controller
         }
         return view('posts.edit')->with('post', $post);
     }
+
+    public function upvote($post_id, $user_id)
+    {
+        $readyvoted = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->count();
+
+        if($readyvoted == 0){
+            DB::table('posts')->whereId($post_id)->increment('votes');
+
+            try{
+            DB::transaction(function() use ($post_id, $user_id){
+                DB::insert('insert into votes (user_id, post_id, votetype) values(?,?,?)', array($user_id,$post_id,true));
+            });
+            }
+            catch(Exception $e){
+                echo 'Caught exception', $e->getMessage(), "\n";
+            }   
+
+        }
+        if($readyvoted > 0){
+            $vote = false;
+            $vote = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->where('votetype', true)->first();
+
+            if($vote == null){
+                DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->update(['votetype' => true]);
+                DB::table('posts')->whereId($post_id)->increment('votes');
+            }
+
+        }
+
+
+            
+    }
+
+    public function downvote($id)
+    {
+        
+    }
+
 
     /**
      * Update the specified resource in storage.

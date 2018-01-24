@@ -48,7 +48,7 @@ class CommentsController extends Controller
         $post= Post::find($post_id);
         $comment = new Comment();
         $comment->name = auth()->user()->name;
-        $comment->user_id   = auth()->user()->id;
+        $comment->user_id = auth()->user()->id;
         $comment->comment = $request->input('comment');;
         $comment->approved = true;
         $comment->post()->associate($post);

@@ -27,3 +27,8 @@ Route::get('comments/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => '
 Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
 Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
 Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
+
+// Votes
+# Route::post('posts/{id}/upvote', ['uses' => 'PostsController@upvote', 'as' => 'posts.upvote']);
+Route::post('posts/{id}/{user_id}/upvote', 'PostsController@upvote');
+Route::post('posts/{id}/downvote', 'PostsController@downvote');
