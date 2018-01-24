@@ -112,7 +112,7 @@ class PostsController extends Controller
 
             if($vote == null){
                 DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->update(['votetype' => true]);
-                DB::table('posts')->whereId($post_id)->increment('votes');
+                DB::table('posts')->whereId($post_id)->increment('votes',2);
             }           
         }        
         return back();           
@@ -127,7 +127,7 @@ class PostsController extends Controller
 
             try{
             DB::transaction(function() use ($post_id, $user_id){
-                DB::insert('insert into votes (user_id, post_id, votetype) values(?,?,?)', array($user_id,$post_id,true));
+                DB::insert('insert into votes (user_id, post_id, votetype) values(?,?,?)', array($user_id,$post_id,false));
             });
             }
             catch(Exception $e){
@@ -137,12 +137,12 @@ class PostsController extends Controller
         }
         if($readyvoted > 0){
             $vote = false;
-            $vote = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->where('votetype', true)->first();
+            $vote = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->where('votetype', false)->first();
             
 
             if($vote == null){
-                DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->update(['votetype' => true]);
-                DB::table('posts')->whereId($post_id)->decrement('votes');
+                DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->update(['votetype' => false]);
+                DB::table('posts')->whereId($post_id)->decrement('votes',2);
             }           
         }        
         return back();           
