@@ -5,7 +5,6 @@
         @if(Auth::user()->id == $comment->user_id)
             <h2>Edit Comment<h2>
             {{Form::model($comment, ['route' => ['comments.update', $comment->id], 'method' => 'PUT'])}}       
-
                 {{Form::label('comment')}}
                 {{Form::text('comment', null, ['class' => 'form-control'])}}
 
