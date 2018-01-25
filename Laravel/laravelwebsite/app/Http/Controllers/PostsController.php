@@ -94,6 +94,7 @@ class PostsController extends Controller
     {
         $readyvoted = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->count();
 
+        # Check if voted
         if($readyvoted == 0){
             DB::table('posts')->whereId($post_id)->increment('votes');
 
@@ -106,6 +107,7 @@ class PostsController extends Controller
                 echo 'Caught exception', $e->getMessage(), "\n";
             }  
         }
+        # If already voted
         if($readyvoted > 0){
             $vote = false;
             $vote = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->where('votetype', true)->first();
@@ -122,6 +124,7 @@ class PostsController extends Controller
     {
         $readyvoted = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->count();
 
+        # If voted
         if($readyvoted == 0){
             DB::table('posts')->whereId($post_id)->decrement('votes');
 
@@ -135,6 +138,7 @@ class PostsController extends Controller
             }   
 
         }
+        # If already voted
         if($readyvoted > 0){
             $vote = false;
             $vote = DB::table('votes')->where('post_id', $post_id)->where('user_id', $user_id)->where('votetype', false)->first();

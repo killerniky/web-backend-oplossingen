@@ -93,9 +93,7 @@ class CommentsController extends Controller
     public function update(Request $request, $id)
     {
         $comment = Comment::find($id);
-
         $this->validate($request, array('comment' => 'required'));
-
         $comment->comment = $request->comment;
         $comment->save();
 
@@ -103,6 +101,7 @@ class CommentsController extends Controller
         return redirect()->route('posts.show', $comment->post->id);
     }
 
+    # "Sure you want to delete?" function
     public function delete($id)
     {
         $comment = Comment::find($id);

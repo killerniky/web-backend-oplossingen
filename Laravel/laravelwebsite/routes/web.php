@@ -11,15 +11,20 @@
 |
 */
 
-Route::get('/', 'PostsController@index');
+
+
+
 # Route::get('/about','PagesController@about');
 # Route::get('/services','PagesController@services');
 
 # Posts
+Route::get('/', 'PostsController@index');
 Route::resource('posts', 'PostsController');
 
+# Authentication
 Auth::routes();
 
+# Dashboard
 Route::get('/dashboard', 'DashboardController@index');
 
 // Comments
